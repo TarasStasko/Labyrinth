@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Лабіринт</title>
+  <script src="https://cdn.jsdelivr.net/npm/tau-prolog@0.3.2/tau-prolog.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tau-prolog@0.3.2/modules/core.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tau-prolog@0.3.2/modules/lists.js"></script>
+  <style>
+    body {
+      background: #f0f4f8;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      margin-top: 20px;
+      color: #333;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .inputs {
+      margin-bottom: 10px;
+      display: flex;
+      gap: 20px;
+      font-size: 16px;
+    }
+    .inputs input {
+      width: 60px;
+      padding: 4px;
+      margin-left: 5px;
+    }
+    canvas {
+      border: 2px solid #444;
+      background-color: #fff;
+      margin-bottom: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Лабіринт</h1>
+  <div class="container">
+    <div class="inputs">
+      <label>
+        Ширина:
+        <input type="number" id="inputWidth" min="2" max="100" value="20">
+      </label>
+      <label>
+        Висота:
+        <input type="number" id="inputHeight" min="2" max="100" value="10">
+      </label>
+    </div>
+    <canvas id="maze" width="1000" height="500"></canvas>
+    <button id="startBtn">Генерувати та знайти шлях</button>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
